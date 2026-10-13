@@ -2,7 +2,7 @@
              <img src="docs/images/OC-Patcher.png" alt="OpenCore Patcher Logo" width="256" />
            
            
-          # OpenCore Legacy Patcher: Intel Fleet Edition (OCLP-Intel)
+        
 
 Welcome to the Intel Fleet Edition of OpenCore Legacy Patcher. This project is a dedicated fork of Dortania's brilliant OCLP, purposefully maintained and optimized to breathe modern life into the complete 2007–2019 Intel Mac fleet.
 
