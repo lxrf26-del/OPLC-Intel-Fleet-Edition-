@@ -8,4 +8,6 @@ Welcome to the Intel Fleet Edition of OpenCore Legacy Patcher. This project is a
 
 As Apple transitions completely away from Intel architecture, this fork focuses strictly on stabilizing, refining, and extending modern macOS support for the machines that defined an era—from classic silver-tower Mac Pros to the final high-end Intel MacBook Pros.
 
+## Disclaimer
+This is an independent fork and is not officially affiliated with, endorsed by, or maintained by Dortania or the core OpenCore Legacy Patcher team. For official, upstream support, please visit the main Dortania repository.
 
