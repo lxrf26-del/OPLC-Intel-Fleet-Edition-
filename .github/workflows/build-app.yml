@@ -5,11 +5,11 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-  workflow_dispatch: # Allows you to manually trigger the build anytime
+  workflow_dispatch: 
 
 jobs:
   build-macos:
-    runs-on: macos-14 # Uses a modern macOS runner to compile the binary
+    runs-on: macos-14 
     
     steps:
     - name: Checkout Repository
@@ -28,13 +28,20 @@ jobs:
 
     - name: Build Application Bundle
       run: |
-        # Runs the official compilation script built into OCLP
+        # Force the script to execute the app bundling sequence
         python3 OpenCore-Patcher-GUI.command --build-app
       continue-on-error: true
+
+    - name: Locate and Move the App Bundle
+      run: |
+        # Creates a dedicated folder and hunts down the built .app
+        mkdir -p output
+        find . -name "*.app" -maxdepth 3 -exec cp -R {} ./output/ \;
+        ls -la output/
 
     - name: Upload Compiled Artifact
       uses: actions/upload-artifact@v4
       with:
         name: OCLP-Intel-Fleet-Edition-v1.0.0
-        path: dist/OpenCore-Patcher.app
-        if-no-files-found: warn
+        path: output/
+        if-no-files-found: error # This will force a clear error log if the file isn't built
