@@ -69,7 +69,8 @@ class MainFrame(wx.Frame):
         Generate UI elements for the main menu
 
         Format:
-          - Title label: OpenCore Legacy Patcher v{X.Y.Z}
+          - Title label:"OCLP: Intel Fleet Edition"
+ v{X.Y.Z}
           - Text:        Model: {Build or Host Model}
           - Buttons:
             - Build and Install OpenCore
